@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Language" content="en">
+        <script src="static/pymon.js"></script>
+        
+
+        <script src="static/circle-progress.js"></script>
+        <script type="text/javascript">
+            window.onload=startup
+            var circleProgress;
+            function startup() {{
+                liveupdates("index");
+                circleProgress = new CircleProgress('.progress');
+                circleProgress.min=0;
+                circleProgress.max=360;
+                circleProgress.value=0;
+                circleProgress.startAngle=180;
+                circleProgress.textFormat =(value) => value + "°";
+            }}
+        </script>
+        
+        <script type="text/javascript">
+            window.onload=startup
+
+        </script>
+        <link rel="stylesheet" href="static/base.css">
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-store" />
+        <meta http-equiv="expires" content="-1" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />
+    </head>
+    <body>
+
+        <h1><img src="static/lidar_image.jpg" width = 80 height = 80>&emsp;RPLIDAR 3D Area Scanner</h1>
+        <form autocomplete="off">
+            <div class="rowsep"></div>
+            <label class="subheading" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;LIDAR Settings</label>
+            <div class="rowsep"></div>
+            <div class="row">
+                <div class="row">
+                <label class="rowlabel" for="cycles" >LIDAR cycles per scan:</label>
+                <select id="cycles" onchange="field_update(this, 'str')">{app.op_select}</select>
+                <label class="rowlabel" id="cycles_comment">&nbsp;increase to obtain better images</label>
+            </div>
+            
+            <div class="rowsep"></div>          
+            <div class="row">
+                <label class="rowlabel" for="distancelimit" >Distance limit:</label>
+                <input class="cell" value="{app.distancelimit}" onchange="field_update(this, 'int')" id="distancelimit" autocomplete="off" style="width: 4em;" />
+                <label class="rowlabel" id="mm_comment3">mm, (6000mm max) </label>
+            </div>                        
+             <div class="rowsep"></div>           
+            <div class="row">
+                <label class="rowlabel" for="filename" >Output filename prefix:</label>
+                <input class="cell1" value="{app.filename}" onchange="field_update(this, 'str')" id="filename" autocomplete="off" style="width: 10em;"/>
+                <label class="rowlabel" id="extension">.ply, in the scans directory</label>
+            </div>
+             <div class="rowsep"></div>          
+            <div class="row">
+                <label class="rowlabel" for="scans" >Scans per rev:</label>
+                <input class="cell1" value="{app.scans}" onchange="field_update(this, 'int')" id="scans" autocomplete="off" style="width: 4em;"/>
+                <label class="rowlabel" id="scan_comment">&nbsp;typical 1000 - 6000, increase to obtain better images</label>
+            
+            </div>
+            
+            <div class="rowsep"></div>
+            <label class="subheading" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Scanner Output</label>
+            <div class="rowsep"></div>
+            <br>
+            <input type="button" class="button" onclick="app_action(this, 'startscan')" id="button1" value="Ready" style="position:relative; top:-40px;"></input>
+            <label class="rowlabel" >&emsp;&emsp;</label>
+
+
+            <div class="row">
+                <label class="rowlabel"  for "position" id="scan_pos_comment">Scanner</label>
+				<label class="progress"></label>
+                <label class="progress" id="circleprogress" type="range" max="360" value="{app.current_ops1:d}" ></label>
+				<label class="rowlabel"  for "position" id="scan_pos_comment">Position</label>
+        		
+            </div>
+
+
+            <div class="rowsep"></div>
+                <label class="rowlabel" id="sample_comment">Total Samples Taken:</label>
+                <label class="rowlabel" id="total_vertex"></label>
+                
+                <label class="rowlabel" id="runtime_comment">&emsp;&emsp;&ensp;Run Time:</label>
+                <label class="rowlabel2" id="runhour"></label> 
+                <label class="rowlabel2" id="hour_comment">:</label>              
+                <label class="rowlabel2" id="runmin"></label> 
+                <label class="rowlabel2" id="minute_comment">:</label>              
+                <label class="rowlabel2" id="runsec"></label>
+                <label class="rowlabel" id="seconds_comment"> </label>
+            <div class="rowsep"></div>
+			<a href="scans" target="_blank" class="btnlike">Click here to download your scans</a>
+            <div class="rowsep"></div><div class="rowsep"></div>  
+        </div>
+        </form>
+    </body>
+</html>

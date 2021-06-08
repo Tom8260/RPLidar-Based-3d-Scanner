@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+	<meta http-equiv="Content-Language" content="en">
+	<link rel="stylesheet" href="static/base.css">
+<body>
+	<h1><img src="static/lidar_image.jpg" width = 80 height = 80>&emsp;RPLIDAR 3D Area Scanned Files</h1>  
+<h3>{{header}}</h3>
+<ul>
+    {% for file in scanfiles %}
+    <li>
+        <a href="{{ file }}">
+            {{ file }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

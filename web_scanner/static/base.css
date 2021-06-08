@@ -1,0 +1,132 @@
+body {
+    background-color: lightblue;
+    background-image: linear-gradient(lightblue, turquoise, white, orange);
+}
+
+input[type=text] {
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+  text-align: right;  
+}
+h1 {
+   text-shadow: 2px 2px #ffff00;
+   text-align: left;
+   }
+
+.rowsncols {
+  display: grid;
+  grid-template-columns: 
+    minmax(240px, 300px)
+    minmax(120px, 0.27fr);
+    align-items: right;
+}
+
+.row {
+  display: contents;
+  color: yellow;
+  
+  
+}
+  
+.rowsep {
+    height:3px;
+    background-color: yellow;
+    box-shadow: 0px 2px 0px #000000;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 600px;    
+}
+
+.rowlabel {
+    text-align: right;
+    font-size: 110%;
+    font-weight: bold;
+    margin-right: 7px;
+    color: blue;
+}
+.rowlabel1 {
+    text-align: right;
+    font-size: 110%;
+    font-weight: bold;
+    margin-right: 7px;
+    color: #DC143C;
+}
+.rowlabel2 {
+    text-align: right;
+    font-size: 110%;
+    font-weight: bold;
+    margin-right: -3px;
+    color: blue;
+}
+.rowlabel3 {
+    text-align: right;
+    font-size: 110%;
+    font-weight: bold;
+    margin-right: -3px;
+    color: red;
+}
+.cell {
+    font-size: 80%;
+    text-align: right; 
+}
+.cell1 {
+    font-size: 80%;
+    text-align: right; 
+}
+.subheading {
+    text-align: right;
+    text-shadow: 2px 2px #ffff00;    
+    font-size: 120%;
+    font-weight: bold;
+    margin-right: 7px;
+    color: black;
+}
+.button {
+  background-color: green;
+  padding: 10px 30px;
+  color: white;
+  font-size: 24px;
+  border: 8px ridge yellow;
+  border-radius: 60px;
+  margin-left: 60px;
+  }
+.btnlike {
+    font-size: 110%;
+    font-weight: bold;
+    margin-right: 7px;
+    color: blue;
+}
+.red {
+            background-color: red;
+}            
+
+.green {
+            background-color: green;
+}            
+.circle-progress-value {
+	stroke-width: 18px;
+	stroke: red;
+
+}
+.circle-progress-circle {
+	stroke-width: 18px;
+	stroke: #eee;
+	start-angle:90;
+}
+.circle-progress-text {
+	font-family: Ariel;
+	font-weight: bold;
+	text-shadow: 1px 1px white;
+	fill: blue;
+	font-size:28px;
+}
+.circle-progress-text:after {
+  content: &#176;
+}
