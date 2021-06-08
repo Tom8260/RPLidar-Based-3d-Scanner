@@ -6,7 +6,7 @@ pylidar_serial.py
 pylidar_serial.pyc
 pylidartest.py
 
-The main scanning program is called area_3d_scanner.web.py. You can run it via the web interface by running 3d_scanner_frontend.py or it will run standalone.
+The main scanning program is called area_3d_scanner.web.py. You can run it via the web interface by running 3d_scanner_frontend.py or it will run standalone. The web interface uses port 5000, to connect use http://127.0.0.1:5000 or your raspberry pi IP address.
 
 Motor information
 
